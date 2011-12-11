@@ -17,5 +17,7 @@ for (i = 0; i <= (prices.length - 1); i++) {
 	}
 }
 
+roundPricesForClass("price")
 roundPricesForClass("priceLarge")
 roundPricesForClass("red t14")
+roundPricesForClass("listprice")
