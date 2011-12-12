@@ -1,7 +1,9 @@
 // ==UserScript==
+// @name amazon_round
 // @match http://*.amazon.com/*
+// @description Rounds prices on Amazon to the nearest half-dollar
+// @author sigloiv
 // ==/UserScript==
-
 
 var node = document
 
