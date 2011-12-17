@@ -5,17 +5,19 @@
 // @author sigloiv
 // ==/UserScript==
 
-var node = document
+var node2 = document
 
 function roundPricesForClass(className)
 {
-var prices = node.getElementsByClassName(className)
-for (i = 0; i <= (prices.length - 1); i++) {
-	tempPrice = prices[i].innerText.substr(1)
-	tempPrice *= 2
-	tempPrice = Math.round(tempPrice)
-	tempPrice /= 2
-	prices[i].innerText = "$" + tempPrice.toFixed(2)
+	var prices = node2.getElementsByClassName(className)
+	for (i = 0; i <= (prices.length - 1); i++) {
+		if (prices[i].innerText.match(/\$[0-9]*\.[0-9][0-9]/)) {
+			tempPrice = prices[i].innerText.match(/\$[0-9]*\.[0-9][0-9]/)[0].substr(1)
+			tempPrice *= 2
+			tempPrice = Math.round(tempPrice)
+			tempPrice /= 2
+			prices[i].innerText = prices[i].innerText.replace(/\$[0-9]*\.[0-9][0-9]/, "$" + tempPrice.toFixed(2))
+		}
 	}
 }
 
